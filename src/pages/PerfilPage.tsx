@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import { useAuth } from '../context/useAuth'
+import '../styles/perfil.css'
 
 interface Perfil {
   email: string
@@ -8,7 +9,7 @@ interface Perfil {
 }
 
 export default function PerfilPage() {
-  const { logout } = useAuth()
+  const { sesion } = useAuth()
   const [perfil, setPerfil] = useState<Perfil | null>(null)
   const [error, setError] = useState('')
 
@@ -18,12 +19,26 @@ export default function PerfilPage() {
       .catch((e: Error) => setError(e.message))
   }, [])
 
+  const email = perfil?.email ?? sesion?.email ?? ''
+
   return (
-    <div>
-      <h2>Mi perfil</h2>
-      {perfil && <p>{perfil.email} — {perfil.roles}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <button onClick={logout}>Cerrar sesión</button>
-    </div>
+    <section className="perfil-page">
+      <div className="perfil-card">
+        <div className="perfil-avatar">{email.charAt(0).toUpperCase()}</div>
+        <h2>Mi perfil</h2>
+        <p className="perfil-email">{email}</p>
+        <span className="perfil-rol">{sesion?.rol}</span>
+
+        <div className="perfil-estado">
+          {error ? (
+            <span className="perfil-estado-error">{error}</span>
+          ) : perfil ? (
+            <span className="perfil-estado-ok">● Sesión verificada</span>
+          ) : (
+            <span className="perfil-estado-carga">Verificando...</span>
+          )}
+        </div>
+      </div>
+    </section>
   )
 }

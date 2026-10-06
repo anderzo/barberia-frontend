@@ -1,0 +1,93 @@
+.perfil-page {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.perfil-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem;
+  text-align: center;
+  color: #f2f2f2;
+  background: #1a1a1a;
+  border: 1px solid #2f2f2f;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.perfil-avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  background: #d4a84b;
+  border-radius: 50%;
+}
+
+.perfil-card h2 {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.perfil-email {
+  margin: 0 0 0.75rem;
+  color: #9a9a9a;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+.perfil-rol {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #d4a84b;
+  background: rgba(212, 168, 75, 0.12);
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  border-radius: 999px;
+}
+
+.perfil-estado {
+  margin: 1.25rem 0;
+  font-size: 0.85rem;
+}
+
+.perfil-estado-ok { color: #6fcf97; }
+.perfil-estado-carga { color: #9a9a9a; }
+.perfil-estado-error { color: #ff9b9b; }
+
+.perfil-btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f2f2f2;
+  background: transparent;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.perfil-btn:hover {
+  color: #d4a84b;
+  border-color: #d4a84b;
+}
+
+.perfil-link {
+  display: block;
+  margin-bottom: 0.75rem;
+  padding: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+  background: #d4a84b;
+  border-radius: 10px;
+  transition: filter 0.2s;
+}
+.perfil-link:hover { filter: brightness(1.1); }

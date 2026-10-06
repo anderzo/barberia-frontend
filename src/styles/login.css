@@ -98,3 +98,12 @@
 .login-btn:hover:not(:disabled) { filter: brightness(1.1); }
 .login-btn:active:not(:disabled) { transform: scale(0.98); }
 .login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.login-footer {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9a9a9a;
+}
+.login-footer a { color: #d4a84b; text-decoration: none; }
+.login-footer a:hover { text-decoration: underline; }

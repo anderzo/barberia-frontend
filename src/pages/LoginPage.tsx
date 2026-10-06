@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/useAuth'
 import '../styles/login.css'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function LoginPage() {
   const { login } = useAuth()
@@ -61,6 +61,9 @@ export default function LoginPage() {
         <button className="login-btn" type="submit" disabled={cargando}>
           {cargando ? 'Entrando...' : 'Entrar'}
         </button>
+        <p className="login-footer">
+          ¿No tienes cuenta? <Link to="/registro">Regístrate</Link>
+        </p>
       </form>
     </main>
   )
